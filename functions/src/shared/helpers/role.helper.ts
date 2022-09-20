@@ -23,11 +23,11 @@ export const mapEditorData = (role: any): IRole => {
 }
 
 /**
- * 
- * @param execType 
- * @param name 
- * @param description 
- * @param uid 
+ *
+ * @param execType
+ * @param name
+ * @param description
+ * @param uid
  * @returns IRole | IRoleUpdate
  * @description THIS FUNCTION SET THE CORRECT DATA BASED ON THE EXECUTION TYPE
  */

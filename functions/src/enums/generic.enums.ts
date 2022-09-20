@@ -7,7 +7,7 @@ export enum EDataBaseCollectionName {
 }
 
 /**
- * @description ENUMS USED TO RUN DIFFERENTS PROCESS DEPENDS OF THE EXEC TYPE 
+ * @description ENUMS USED TO RUN DIFFERENTS PROCESS DEPENDS OF THE EXEC TYPE
  */
 export enum EExecutionType {
   UPDATE = 'UPDATE',

@@ -4,10 +4,8 @@ import { IRole, IRoleUpdate } from '../models/role.model'
 import { EDataBaseCollectionName } from '../enums/generic.enums'
 
 export class RoleService {
-
- 
   /**
-   * 
+   *
    * @returns firestore.QuerySnapshot
    */
   async findAllRoles (): Promise<admin.firestore.QuerySnapshot> {
@@ -17,7 +15,7 @@ export class RoleService {
   }
 
   /**
-   * 
+   *
    * @returns firestore.DocumentSnapshot
    */
   async findRoleById (uid: string): Promise<admin.firestore.DocumentSnapshot> {
@@ -27,9 +25,8 @@ export class RoleService {
       .get()
   }
 
-
   /**
-   * 
+   *
    * @returns firestore.DocumentReference
    */
   async createRole (role: IRole): Promise<admin.firestore.DocumentReference> {
@@ -39,7 +36,7 @@ export class RoleService {
   }
 
   /**
-   * 
+   *
    * @returns firestore.WriteResult
    */
   async updateRole (role: IRoleUpdate): Promise<admin.firestore.WriteResult> {
@@ -50,7 +47,7 @@ export class RoleService {
   }
 
   /**
-   * 
+   *
    * @returns firestore.WriteResult
    */
   async deleteRole (uid: string): Promise<admin.firestore.WriteResult> {
@@ -61,7 +58,7 @@ export class RoleService {
   }
 
   /**
-   * 
+   *
    * @returns firestore.WriteResult
    */
   async activateRole (uid: string): Promise<admin.firestore.WriteResult> {
@@ -72,7 +69,7 @@ export class RoleService {
   }
 
   /**
-   * 
+   *
    * @returns firestore.QuerySnapshot
    */
   async findRoleByName (roleName: string): Promise<admin.firestore.QuerySnapshot> {

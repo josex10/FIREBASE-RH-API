@@ -22,14 +22,14 @@ export class RoleRouter {
       this.roleController.findAllRoles(req, res)
     })
 
-    this.router.get('/role/:uid', 
+    this.router.get('/role/:uid',
       getRoleByIDValidationRules(),
       (req: Request, res: Response, next: NextFunction): void => {
         executeValidator(req, res, next)
       },
       (req: Request, res: Response): void => {
         this.roleController.findRoleById(req, res)
-    })
+      })
 
     this.router.post('/role',
       createRoleValidationRules(),
@@ -38,7 +38,7 @@ export class RoleRouter {
       },
       (req: Request, res: Response): void => {
         this.roleController.createRole(req, res)
-    })
+      })
 
     this.router.put('/role/:uid', (req, res): void => {
       this.roleController.updateRole(req, res)

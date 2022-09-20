@@ -10,11 +10,10 @@ export enum HttpStatus {
 }
 
 export class HttpResponse {
-
   /**
-   * 
-   * @param res 
-   * @param data 
+   *
+   * @param res
+   * @param data
    * @returns Response
    * @description THIS FUNCTION RETURN THE CORRECT STRUCTURE TO RESPONSE FOR THE CLIENT
    */
@@ -27,9 +26,9 @@ export class HttpResponse {
   }
 
   /**
-   * 
-   * @param res 
-   * @param data 
+   *
+   * @param res
+   * @param data
    * @returns Response
    * @description THIS FUNCTION RETURN THE CORRECT STRUCTURE TO RESPONSE FOR THE CLIENT
    */
@@ -42,9 +41,9 @@ export class HttpResponse {
   }
 
   /**
-   * 
-   * @param res 
-   * @param data 
+   *
+   * @param res
+   * @param data
    * @returns Response
    * @description THIS FUNCTION RETURN THE CORRECT STRUCTURE TO RESPONSE FOR THE CLIENT
    */
@@ -57,9 +56,9 @@ export class HttpResponse {
   }
 
   /**
-   * 
-   * @param res 
-   * @param data 
+   *
+   * @param res
+   * @param data
    * @returns Response
    * @description THIS FUNCTION RETURN THE CORRECT STRUCTURE TO RESPONSE FOR THE CLIENT
    */
@@ -72,9 +71,9 @@ export class HttpResponse {
   }
 
   /**
-   * 
-   * @param res 
-   * @param data 
+   *
+   * @param res
+   * @param data
    * @returns Response
    * @description THIS FUNCTION RETURN THE CORRECT STRUCTURE TO RESPONSE FOR THE CLIENT
    */
@@ -87,9 +86,9 @@ export class HttpResponse {
   }
 
   /**
-   * 
-   * @param res 
-   * @param data 
+   *
+   * @param res
+   * @param data
    * @returns Response
    * @description THIS FUNCTION RETURN THE CORRECT STRUCTURE TO RESPONSE FOR THE CLIENT
    */

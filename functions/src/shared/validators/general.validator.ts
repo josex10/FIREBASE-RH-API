@@ -1,14 +1,13 @@
-import { CustomValidator } from 'express-validator'
+import { CustomValidator, validationResult } from 'express-validator'
 import { EValidationMessage } from '../../enums/generic.enums'
 import { HttpResponse } from '../utils/http.response'
-import { validationResult } from 'express-validator'
 import { NextFunction, Request, Response } from 'express'
 
 /**
- * 
- * @param req 
- * @param res 
- * @param next 
+ *
+ * @param req
+ * @param res
+ * @param next
  * @returns Response
  * @description THIS FUNCTION EXECUTE ALL THE RULES VALIDATION AND RESPONSE THE CORRECT MESSAGE TO THE CLIENT IN CASE OF ERROR
  */
@@ -23,8 +22,8 @@ export const executeValidator = (req: Request, res: Response, next: NextFunction
 }
 
 /**
- * 
- * @param string 
+ *
+ * @param string
  * @returns Promise
  * @description THIS FUNCTION REMOVE ALL THE BLANK SPACES OF THE STRINGS TO CHECK IF THE STRING HAS DATA
  */

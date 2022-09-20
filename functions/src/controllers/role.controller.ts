@@ -12,9 +12,9 @@ export class RoleController {
   ) {}
 
   /**
-   * 
-   * @param _req 
-   * @param res 
+   *
+   * @param _req
+   * @param res
    * @returns IRoles[]
    * @description THIS FUNCTION GET ALL ROLES FROM THE API
    */
@@ -40,9 +40,9 @@ export class RoleController {
   }
 
   /**
-   * 
-   * @param req 
-   * @param res 
+   *
+   * @param req
+   * @param res
    * @returns IRole
    * @Description THIS FUNCTION GET A ROLE FROM THE DB BY ID
    */
@@ -71,9 +71,9 @@ export class RoleController {
   }
 
   /**
-   * 
-   * @param req 
-   * @param res 
+   *
+   * @param req
+   * @param res
    * @returns IRole.uid
    * @description THIS FUNCTION INSERT A NEW ROLE INTO THE DB
    */
@@ -97,9 +97,9 @@ export class RoleController {
   }
 
   /**
-   * 
-   * @param req 
-   * @param res 
+   *
+   * @param req
+   * @param res
    * @returns Firestore.WriteResult
    * @description THIS FUNCTION UPDATE THE ROLE ON THE DB
    */
@@ -126,9 +126,9 @@ export class RoleController {
   }
 
   /**
-   * 
-   * @param req 
-   * @param res 
+   *
+   * @param req
+   * @param res
    * @returns Firestore.WriteResult
    * @description THIS FUNCTION EDIT ONLY THE OPTION ACTIVE TO FALSE FOR THE ROLE ON THE DB
    */
@@ -149,9 +149,9 @@ export class RoleController {
   }
 
   /**
-   * 
-   * @param req 
-   * @param res 
+   *
+   * @param req
+   * @param res
    * @returns Firestore.WriteResult
    * @description THIS FUNCTION EDIT ONLY THE OPTION ACTIVE TO TRUE FOR THE ROLE ON THE DB
    */

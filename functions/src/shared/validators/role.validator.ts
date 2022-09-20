@@ -4,9 +4,8 @@ import { RoleController } from '../../controllers/role.controller'
 import { checkEmptyStrings } from './general.validator'
 import { EValidationMessage } from '../../enums/generic.enums'
 
-
 /**
- * 
+ *
  * @returns ValidationChain[]
  * @description THIS FUNCTION ADD ALL THE RULES TO CREATE A NEW ROLE
  */
@@ -25,23 +24,23 @@ export const createRoleValidationRules = (): ValidationChain[] => {
 }
 
 /**
- * 
+ *
  * @returns ValidationChain[]
  * @description THIS FUNCTION ADD ALL THE RULES TO GET A ROLE BY ID
  */
- export const getRoleByIDValidationRules = (): ValidationChain[] => {
+export const getRoleByIDValidationRules = (): ValidationChain[] => {
   return [
     param('uid')
       .exists().withMessage(EValidationMessage.REQUIRED).bail()
       .isString().withMessage(EValidationMessage.TYPESTRING).bail()
-      .custom(checkEmptyStrings).bail(),
+      .custom(checkEmptyStrings).bail()
   ]
 }
 
 /**
- * 
- * @param roleName 
- * @returns CustomValidator 
+ *
+ * @param roleName
+ * @returns CustomValidator
  * @description THIS IS A CUSTOM VALIDATION FUNCTION TO CHECK IF THE ROLE NAME IS ALREADY INTO THE DB
  */
 const isDuplicateRoleName: CustomValidator = async roleName => {
@@ -50,7 +49,7 @@ const isDuplicateRoleName: CustomValidator = async roleName => {
   const response = await roleController.checkDuplicateRoleName(roleName)
 
   if (response) {
-    return  Promise.reject(new Error(`The role name ${roleName} already exists`))
+    return await Promise.reject(new Error(`The role name ${roleName} already exists`))
   }
-  return  Promise.resolve()
+  return await Promise.resolve()
 }
