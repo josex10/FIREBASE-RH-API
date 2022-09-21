@@ -46,7 +46,7 @@ export const checkEmptyStrings: CustomValidator = async string => {
  * @returns ValidationChain[]
  * @description THIS FUNCTION ADD ALL THE RULES TO GET A ROLE BY ID
  */
- export const uidValidationRules = (): ValidationChain[] => {
+export const uidValidationRules = (): ValidationChain[] => {
   return [
     param('uid')
       .exists().withMessage(EValidationMessage.REQUIRED).bail()

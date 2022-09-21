@@ -40,7 +40,7 @@ export class RoleRouter {
         await this.roleController.createRole(req, res)
       }) as RequestHandler)
 
-    this.router.put('/role/:uid', 
+    this.router.put('/role/:uid',
       uidValidationRules(),
       roleValidationRules(),
       (req: Request, res: Response, next: NextFunction): void => {
@@ -48,24 +48,24 @@ export class RoleRouter {
       },
       (async (req, res) => {
         await this.roleController.updateRole(req, res)
-    }) as RequestHandler)
+      }) as RequestHandler)
 
-    this.router.delete('/role/:uid', 
+    this.router.delete('/role/:uid',
       uidValidationRules(),
       (req: Request, res: Response, next: NextFunction): void => {
         executeValidator(req, res, next)
       },
-      ( async (req, res) => {
+      (async (req, res) => {
         await this.roleController.deleteRole(req, res)
       }) as RequestHandler)
 
-    this.router.put('/role/activate/:uid', 
+    this.router.put('/role/activate/:uid',
       uidValidationRules(),
       (req: Request, res: Response, next: NextFunction): void => {
         executeValidator(req, res, next)
       },
-      ( async (req, res) => {
+      (async (req, res) => {
         await this.roleController.activateRole(req, res)
-    }) as RequestHandler)
+      }) as RequestHandler)
   }
 }

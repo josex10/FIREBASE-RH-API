@@ -15,14 +15,14 @@ export const roleValidationRules = (): ValidationChain[] => {
       .exists().withMessage(EValidationMessage.REQUIRED).bail()
       .isString().withMessage(EValidationMessage.TYPESTRING).bail()
       .custom(checkEmptyStrings).bail()
-      .isLength({ min: 5}).withMessage(EValidationMessage.NOTMINSTRINGLENGTH).bail()
-      .isLength({ max: 230}).withMessage(EValidationMessage.EXCEEDSTRINGLENGTH).bail(),
+      .isLength({ min: 5 }).withMessage(EValidationMessage.NOTMINSTRINGLENGTH).bail()
+      .isLength({ max: 230 }).withMessage(EValidationMessage.EXCEEDSTRINGLENGTH).bail(),
     body('name')
       .exists().withMessage(EValidationMessage.REQUIRED).bail()
       .isString().withMessage(EValidationMessage.TYPESTRING).bail()
       .custom(checkEmptyStrings).bail()
-      .isLength({ min: 5}).withMessage(EValidationMessage.NOTMINSTRINGLENGTH).bail()
-      .isLength({ max: 30}).withMessage(EValidationMessage.EXCEEDSTRINGLENGTH).bail()
+      .isLength({ min: 5 }).withMessage(EValidationMessage.NOTMINSTRINGLENGTH).bail()
+      .isLength({ max: 30 }).withMessage(EValidationMessage.EXCEEDSTRINGLENGTH).bail()
       .custom(isDuplicateRoleName).bail()
   ]
 }
