@@ -25,7 +25,7 @@ export class RoleController {
 
       // CHECK IF SOME DATA WAS RETURNED FROM THE DB
       if (dbResponse.empty) {
-        return this.httpResponse.NotFound(res, EValidationMessage.NODOCUMENTS)
+        this.httpResponse.NotFound(res, EValidationMessage.NODOCUMENTS)
       }
 
       // CALL THE HELPER TO CONVERT THE DATA INTO THE CORRECT INTERFACE

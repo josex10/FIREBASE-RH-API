@@ -92,8 +92,8 @@ export class HttpResponse {
    * @returns Response
    * @description THIS FUNCTION RETURN THE CORRECT STRUCTURE TO RESPONSE FOR THE CLIENT
    */
-  UnprocessableEntity (res: Response, data?: any): Response {
-    return res.status(HttpStatus.UNPROCESSABLE_ENTITY).json({
+  UnprocessableEntity (res: Response, data?: any): void {
+    res.status(HttpStatus.UNPROCESSABLE_ENTITY).json({
       status: HttpStatus.UNPROCESSABLE_ENTITY,
       statusMsg: 'Unprocessable Entity',
       error: data

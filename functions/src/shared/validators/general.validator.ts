@@ -11,14 +11,18 @@ import { NextFunction, Request, Response } from 'express'
  * @returns Response
  * @description THIS FUNCTION EXECUTE ALL THE RULES VALIDATION AND RESPONSE THE CORRECT MESSAGE TO THE CLIENT IN CASE OF ERROR
  */
-export const executeValidator = (req: Request, res: Response, next: NextFunction): Response | void => {
-  const errors = validationResult(req)
-  if (errors.isEmpty()) {
-    return next()
-  }
-
+export const executeValidator = (req: Request, res: Response, next: NextFunction): void => {
   const httpResponse = new HttpResponse()
-  return httpResponse.UnprocessableEntity(res, errors.array({ onlyFirstError: true })[0])
+  const errors = validationResult(req)
+  try {
+    if (!errors.isEmpty()) {
+      errors.throw()
+    }
+    return next()
+  } catch (e) {
+    console.log(e)
+    httpResponse.UnprocessableEntity(res, errors.array({ onlyFirstError: true })[0])
+  }
 }
 
 /**
