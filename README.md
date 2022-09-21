@@ -20,7 +20,7 @@ Restaurant Helper API uses a number of open source projects to work properly:
 
 Restaurant Helper requires [Node.js](https://nodejs.org/) v16+ to run.
 
-_For local environments_
+## For local environments
 
 Install the dependencies and devDependencies and start the server.
 
@@ -30,6 +30,8 @@ npm i
 npm run build
 firebase serve
 ```
+
+## For production environments
 
 ```sh
 firebase deploy
