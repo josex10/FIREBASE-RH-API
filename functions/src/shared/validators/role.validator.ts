@@ -43,10 +43,10 @@ export const getRoleByIDValidationRules = (): ValidationChain[] => {
  * @returns CustomValidator
  * @description THIS IS A CUSTOM VALIDATION FUNCTION TO CHECK IF THE ROLE NAME IS ALREADY INTO THE DB
  */
-const isDuplicateRoleName: CustomValidator = (async (roleName) => {
+const isDuplicateRoleName: CustomValidator = (async (roleName: string) => {
   const roleController = new RoleController()
 
-  const response = await roleController.checkDuplicateRoleName(roleName)
+  const response = await roleController.checkDuplicateRoleName(roleName.toUpperCase())
   if (response) {
     return await Promise.reject(new Error(`The role name ${String(roleName)} already exists`))
   }
