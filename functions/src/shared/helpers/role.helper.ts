@@ -12,9 +12,9 @@ import { EExecutionType } from '../../enums/generic.enums'
 export const mapEditorData = (role: any): IRole => {
   const rolSchema: IRole = {
     uid: role.id,
-    createAt: role.data().createAt ? UConvertDateSecondsToDateObject(role.data().createAt._seconds) : null,
-    updateAt: role.data().updateAt ? UConvertDateSecondsToDateObject(role.data().updateAt._seconds) : null,
-    deleteAt: role.data().deleteAt ? UConvertDateSecondsToDateObject(role.data().deleteAt._seconds) : null,
+    createAt: role.data().createAt !== null ? UConvertDateSecondsToDateObject(role.data().createAt._seconds) : null,
+    updateAt: role.data().updateAt !== null ? UConvertDateSecondsToDateObject(role.data().updateAt._seconds) : null,
+    deleteAt: role.data().deleteAt !== null ? UConvertDateSecondsToDateObject(role.data().deleteAt._seconds) : null,
     active: role.data().active,
     description: role.data().description,
     name: role.data().name
