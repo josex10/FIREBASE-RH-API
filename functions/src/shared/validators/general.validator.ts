@@ -1,4 +1,4 @@
-import { CustomValidator, validationResult } from 'express-validator'
+import { CustomValidator, param, ValidationChain, validationResult } from 'express-validator'
 import { EValidationMessage } from '../../enums/generic.enums'
 import { HttpResponse } from '../utils/http.response'
 import { NextFunction, Request, Response } from 'express'
@@ -39,4 +39,18 @@ export const checkEmptyStrings: CustomValidator = async string => {
   }
 
   return await Promise.resolve()
+}
+
+/**
+ *
+ * @returns ValidationChain[]
+ * @description THIS FUNCTION ADD ALL THE RULES TO GET A ROLE BY ID
+ */
+export const uidValidationRules = (): ValidationChain[] => {
+  return [
+    param('uid')
+      .exists().withMessage(EValidationMessage.REQUIRED).bail()
+      .isString().withMessage(EValidationMessage.TYPESTRING).bail()
+      .custom(checkEmptyStrings).bail()
+  ]
 }

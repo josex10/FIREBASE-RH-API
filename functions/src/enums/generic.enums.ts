@@ -22,5 +22,7 @@ export enum EValidationMessage {
   TYPESTRING = 'The parameter name should be a string type.',
   EMPTYSTRING = 'The para parameter cannot be empty.',
   INCORRECTUUID = 'The paramater is an incorrect ID.',
-  NODOCUMENTS = 'No documents'
+  NODOCUMENTS = 'No documents',
+  NOTMINSTRINGLENGTH = 'The parameter does not have the minimum length required.',
+  EXCEEDSTRINGLENGTH = 'The parameter has exceeded required length.'
 }

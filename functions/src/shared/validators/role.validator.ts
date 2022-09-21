@@ -1,5 +1,5 @@
 
-import { body, ValidationChain, CustomValidator, param } from 'express-validator'
+import { body, ValidationChain, CustomValidator } from 'express-validator'
 import { RoleController } from '../../controllers/role.controller'
 import { checkEmptyStrings } from './general.validator'
 import { EValidationMessage } from '../../enums/generic.enums'
@@ -9,31 +9,21 @@ import { EValidationMessage } from '../../enums/generic.enums'
  * @returns ValidationChain[]
  * @description THIS FUNCTION ADD ALL THE RULES TO CREATE A NEW ROLE
  */
-export const createRoleValidationRules = (): ValidationChain[] => {
+export const roleValidationRules = (): ValidationChain[] => {
   return [
     body('description')
       .exists().withMessage(EValidationMessage.REQUIRED).bail()
       .isString().withMessage(EValidationMessage.TYPESTRING).bail()
-      .custom(checkEmptyStrings).bail(),
+      .custom(checkEmptyStrings).bail()
+      .isLength({ min: 5 }).withMessage(EValidationMessage.NOTMINSTRINGLENGTH).bail()
+      .isLength({ max: 230 }).withMessage(EValidationMessage.EXCEEDSTRINGLENGTH).bail(),
     body('name')
       .exists().withMessage(EValidationMessage.REQUIRED).bail()
       .isString().withMessage(EValidationMessage.TYPESTRING).bail()
       .custom(checkEmptyStrings).bail()
+      .isLength({ min: 5 }).withMessage(EValidationMessage.NOTMINSTRINGLENGTH).bail()
+      .isLength({ max: 30 }).withMessage(EValidationMessage.EXCEEDSTRINGLENGTH).bail()
       .custom(isDuplicateRoleName).bail()
-  ]
-}
-
-/**
- *
- * @returns ValidationChain[]
- * @description THIS FUNCTION ADD ALL THE RULES TO GET A ROLE BY ID
- */
-export const getRoleByIDValidationRules = (): ValidationChain[] => {
-  return [
-    param('uid')
-      .exists().withMessage(EValidationMessage.REQUIRED).bail()
-      .isString().withMessage(EValidationMessage.TYPESTRING).bail()
-      .custom(checkEmptyStrings).bail()
   ]
 }
 
